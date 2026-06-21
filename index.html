@@ -11,17 +11,33 @@
     box-sizing: border-box;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: #ffffff;
     color: #1a1a1a;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   .top-bar {
     height: 8px;
     background: #1a1a1a;
     width: 100%;
+    flex-shrink: 0;
+  }
+
+  .main-content {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 8px);
   }
 
   .container {
@@ -115,11 +131,6 @@
     margin-top: 8px;
   }
 
-  .footer-spacer {
-    height: 24px;
-    background: #ffffff;
-  }
-
   .footer p {
     max-width: 480px;
     margin: 0 auto;
@@ -153,6 +164,7 @@
 
   <div class="top-bar"></div>
 
+  <div class="main-content">
   <div class="container">
 
     <div class="logo">
@@ -175,8 +187,7 @@
     <a href="#" class="cta-button" target="_blank" rel="noopener">TELEGRAM ADMINGA YOZISH</a>
 
   </div>
-
-  <div class="footer-spacer"></div>
+  </div>
 
   <div class="footer">
     <p>This site or product is not part of, or endorsed by, Facebook, Google or any social media platform in any way. FACEBOOK is a trademark of META PLATFORMS, Inc. YOUTUBE and GOOGLE are trademarks of ALPHABET, Inc.</p>
